@@ -1,10 +1,8 @@
 import React from 'react';
 import OptionBox from "./components/OptionBox";
-import rock from "./images/rock.png";
-import paper from "./images/paper.png";
-import scissors from "./images/scissors.png";
-// import Results from "./components/Results"
+import Results from "./components/Results"
 import { Container, Header, } from "semantic-ui-react";
+import './app.css';
 
 class App extends React.Component {
   state = { userChoice: null, compChoice: null, };
@@ -21,18 +19,20 @@ class App extends React.Component {
   render() {
     return (
       <Container style={{ marginTop: "25px", }}>
-        <Header as="h1" textAlign="center">React Rock Paper Scissors</Header>
+        <Header as="h1" textAlign="center" color="blue">React Rock Paper Scissors</Header>
         <hr />
-        <OptionBox name="rock" img={rock} optionClick={this.optionClick} />
-        <OptionBox name="paper" img={paper} optionClick={this.optionClick} />
-        <OptionBox name="scissors" img={scissors} optionClick={this.optionClick} />
+        <div>
+          <Header as="h3" color="purple" textAlign="center">Select your weapon:</Header>
+          <OptionBox optionClick={this.optionClick} />
+        </div>
         <hr />
-        
-        {/* <Results 
-          user={this.state.userChoice}
-          comp={this.state.compChoice}
-        /> */}
-
+        <div id="results">
+          <Header>Game Results</Header>
+          <Results 
+            user={this.state.userChoice}
+            comp={this.state.compChoice}
+          />
+        </div>
       </Container>
     );
   };
