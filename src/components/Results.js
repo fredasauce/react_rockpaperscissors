@@ -31,6 +31,22 @@ class Results extends React.Component {
         // do nothing
     }
   }
+
+  // logic = () => {
+  //   const rules = {
+  //     "Rock": "Scissors",
+  //     "Paper": "Rock",
+  //     "Scissors": "Paper"
+  //   }
+  //   const {user, comp} = this.state
+  //   if (user === comp) {
+  //     this.setState({outcome: "Tie"})
+  //   } else if (comp === rules[user]) {
+  //     this.setState({outcome: "You Win" })
+  //   } else {
+  //     this.setState({outcome: "You Lose"})
+  //   }
+  // }
   
   render () {
     return (
@@ -52,6 +68,9 @@ class Results extends React.Component {
           </Card>
         </Card.Group>
       </div>
+      // <div>
+      //   {this.logic()}
+      // </div>
 
     )
   }
